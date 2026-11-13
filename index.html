@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Detection System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bug Detection System</h1>
+        <p>Software Testing and Bug Tracking</p>
+    </header>
+
+    <!-- Login Section -->
+    <section id="loginSection" class="container">
+        <h2>Login</h2>
+
+        <label>Select Role</label>
+        <select id="role">
+            <option value="developer">Developer</option>
+            <option value="tester">Tester</option>
+        </select>
+
+        <input type="text" id="username"
+               placeholder="Enter your name">
+
+        <button onclick="login()">Login</button>
+    </section>
+
+    <!-- Developer Dashboard -->
+    <section id="developerDashboard" class="container hidden">
+
+        <h2>Developer Dashboard</h2>
+
+        <h3>Create New Feature</h3>
+
+        <input type="text" id="featureName"
+               placeholder="Feature name">
+
+        <textarea id="featureDescription"
+                  placeholder="Feature description"></textarea>
+
+        <h3>Introduce an Intentional Bug</h3>
+
+        <input type="text" id="bugDescription"
+               placeholder="Describe the intentional bug">
+
+        <button onclick="createFeature()">
+            Submit Feature for Testing
+        </button>
+
+        <h3>Created Features</h3>
+        <div id="developerFeatures"></div>
+
+        <h3>Bug Reports Received</h3>
+        <div id="developerBugReports"></div>
+
+        <button class="logout" onclick="logout()">Logout</button>
+
+    </section>
+
+    <!-- Tester Dashboard -->
+    <section id="testerDashboard" class="container hidden">
+
+        <h2>Tester Dashboard</h2>
+
+        <h3>Available Features for Testing</h3>
+        <div id="testerFeatures"></div>
+
+        <h3>Report a Detected Bug</h3>
+
+        <select id="featureSelect">
+            <option value="">Select Feature</option>
+        </select>
+
+        <input type="text" id="detectedBug"
+               placeholder="Enter detected bug title">
+
+        <textarea id="expectedResult"
+                  placeholder="Expected result"></textarea>
+
+        <textarea id="actualResult"
+                  placeholder="Actual result"></textarea>
+
+        <select id="severity">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+            <option value="Critical">Critical</option>
+        </select>
+
+        <button onclick="reportBug()">Submit Bug Report</button>
+
+        <h3>My Bug Reports</h3>
+        <div id="testerBugReports"></div>
+
+        <button class="logout" onclick="logout()">Logout</button>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
